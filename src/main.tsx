@@ -1,8 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './styles/index.css'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <></>
-  </StrictMode>
+const root = document.getElementById('root')
+
+if (!root) {
+	throw new Error('Elemento raiz "#root" não encontrado.')
+}
+
+createRoot(root).render(
+	<StrictMode>
+		<></>
+	</StrictMode>,
 )

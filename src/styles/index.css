@@ -1,1 +1,141 @@
 @import "tailwindcss";
+@import "./typography.css";
+
+@theme {
+	/* ============================================================
+	 * Background
+	 * Papéis de fundo utilizados para estabelecer hierarquia
+	 * entre a página e suas diferentes superfícies.
+	 * ============================================================ */
+
+	--color-background: #171512;
+	--color-background-secondary: #211d18;
+	--color-surface: #2d2720;
+
+	/* ============================================================
+	 * Text
+	 * Papéis de cor utilizados para estabelecer hierarquia
+	 * entre conteúdo principal e informações secundárias.
+	 * ============================================================ */
+
+	--color-text: #f1e9dc;
+	--color-text-secondary: #c8b9a5;
+
+	/* ============================================================
+	 * Interactive
+	 * Cores utilizadas para ações e elementos interativos.
+	 * ============================================================ */
+
+	--color-primary: #68734a;
+	--color-primary-hover: #7d8958;
+
+	/* ============================================================
+	 * Accent
+	 * Cor utilizada para pequenos destaques que complementam
+	 * a identidade visual sem representar uma ação principal.
+	 * ============================================================ */
+
+	--color-accent: #b58a5a;
+
+	/* ============================================================
+	 * Border
+	 * Cor utilizada para separar e delimitar elementos da interface.
+	 * ============================================================ */
+
+	--color-border: #40382e;
+
+	/* ============================================================
+	 * Typography
+	 * Famílias tipográficas utilizadas pela interface.
+	 * ============================================================ */
+
+	--font-display: "Plus Jakarta Sans", sans-serif;
+	--font-sans: "Inter", sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
+
+	/* ============================================================
+ * Typography scale
+ * Tamanho utilizado para títulos de destaque, principalmente
+ * no Hero, acima da escala tipográfica convencional.
+ * ============================================================ */
+
+	--text-display: clamp(3rem, 6vw, 4.5rem);
+}
+
+@layer base {
+	body {
+		font-family: var(--font-sans);
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-display);
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.035em;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 2.5rem);
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+	}
+
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.02em;
+	}
+
+	h4 {
+		font-size: clamp(1.25rem, 2vw, 1.5rem);
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	h5 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	h6 {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
+	p {
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.7;
+	}
+
+	small {
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+
+	[data-caption] {
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	code,
+	pre {
+		font-family: var(--font-mono);
+	}
+}
