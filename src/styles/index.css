@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+@import './typography.css';
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+:root {
+	--header-height: 85px;
+}
+
+@theme {
+	/* ============================================================
+     * Background
+     * Papéis de fundo utilizados para estabelecer hierarquia
+     * entre a página e suas diferentes superfícies.
+     * ============================================================ */
+
+	--color-background: #f8f6f2;
+	--color-background-secondary: #f0ede7;
+	--color-surface: #ffffff;
+
+	/* ============================================================
+     * Text
+     * Papéis de cor utilizados para estabelecer hierarquia
+     * entre conteúdo principal e informações secundárias.
+     * ============================================================ */
+
+	--color-text: #292721;
+	--color-text-secondary: #6f6a5f;
+
+	/* ============================================================
+     * Interactive
+     * Cores utilizadas para ações e elementos interativos.
+     * ============================================================ */
+
+	--color-primary: #68734a;
+	--color-primary-hover: #56613d;
+
+	/* ============================================================
+     * Accent
+     * Cor utilizada para pequenos destaques que complementam
+     * a identidade visual sem representar uma ação principal.
+     * ============================================================ */
+
+	--color-accent: #b58a5a;
+
+	/* ============================================================
+     * Border
+     * Cor utilizada para separar e delimitar elementos da interface.
+     * ============================================================ */
+
+	--color-border: #ded9d0;
+
+	/* ============================================================
+     * Typography
+     * Famílias tipográficas utilizadas pela interface.
+     * ============================================================ */
+
+	--font-display: 'Plus Jakarta Sans', sans-serif;
+	--font-sans: 'Inter', sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+
+	/* ============================================================
+     * Typography scale
+     * Tamanho utilizado para títulos de destaque, principalmente
+     * no Hero, acima da escala tipográfica convencional.
+     * ============================================================ */
+
+	--text-display: clamp(3rem, 6vw, 4.5rem);
+
+	--transition-duration-default: 200ms;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+
+	body::after {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		background:
+			radial-gradient(circle at 20% 30%, var(--color-primary) 0%, transparent 40%),
+			radial-gradient(circle at 80% 70%, var(--color-accent) 0%, transparent 40%);
+		opacity: 0.15;
+		pointer-events: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-display);
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.035em;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 2.5rem);
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+	}
+
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.02em;
+	}
+
+	h4 {
+		font-size: clamp(1.25rem, 2vw, 1.5rem);
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	h5 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	h6 {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
+	p {
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.7;
+	}
+
+	small {
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+
+	[data-caption] {
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	code,
+	pre {
+		font-family: var(--font-mono);
+	}
+}
