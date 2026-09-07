@@ -13,6 +13,7 @@ import {
 	FaReact,
 } from 'react-icons/fa6'
 import {
+    SiCloudflare,
 	SiMysql,
 	SiNestjs,
 	SiPostgresql,
@@ -93,6 +94,7 @@ const technologyCategories: TechnologyCategory[] = [
 			{ name: 'Docker', icon: FaDocker },
 			{ name: 'Linux', icon: FaLinux },
 			{ name: 'Figma', icon: FaFigma },
+			{ name: 'Cloudflare', icon: SiCloudflare },
 		],
 	},
 ]
